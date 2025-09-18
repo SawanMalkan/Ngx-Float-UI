@@ -1,23 +1,62 @@
-<button type="button" [disableStyle]="false" [floatUiLoose]="addPackagePopup" [preventOverflow]="true"
-  [showOnStart]="false" [hideOnScroll]="true" [loosePlacement]="'bottom'">
-  Btn 1
-</button>
+<h3>
+  Popper not getting closed issue
+</h3>
 
-<button style="margin-left: 20px;" type="button" [disableStyle]="false" [floatUiLoose]="addPackagePopup"
-  [preventOverflow]="true" [showOnStart]="false" [hideOnScroll]="true" [loosePlacement]="'bottom'">
-  Btn 2
-</button>
+<div>
+  <button type="button" [disableStyle]="false" [floatUiLoose]="content1" [preventOverflow]="true" [showOnStart]="false"
+    [hideOnScroll]="true" [loosePlacement]="'bottom'">
+    Btn 1
+  </button>
+
+  <button style="margin-left: 20px;" type="button" [disableStyle]="false" [floatUiLoose]="content1"
+    [preventOverflow]="true" [showOnStart]="false" [hideOnScroll]="true" [loosePlacement]="'bottom'">
+    Btn 2
+  </button>
+</div>
+
+<hr style="margin-top: 50px;margin-bottom: 50px;">
 
 
-<float-ui-content #addPackagePopup>
+<h3>
+  Popper getting cut, should be smartly rendered inside the screen only just like in ngpopperjs (version 16)
+</h3>
+
+<div style="display: flex;justify-content: center;margin-left: 50px;">
+  <button type="button" [disableStyle]="false" [floatUiLoose]="content2" [preventOverflow]="true" [showOnStart]="false"
+    [hideOnScroll]="true" [loosePlacement]="'right-end'">
+    Btn 3
+  </button>
+
+  <button style="margin-left: 20px;" type="button" [disableStyle]="false" [floatUiLoose]="content2"
+    [preventOverflow]="true" [showOnStart]="false" [hideOnScroll]="true" [loosePlacement]="'right-end'">
+    Btn 4
+  </button>
+</div>
+
+
+<float-ui-content #content1>
   <div>
     <div>
-      <button type="button" (click)="addPackagePopup.hide()">
+      <button type="button" (click)="content1.hide()">
         &times;
       </button>
     </div>
     <div>
-      Content
+      Content 1
+    </div>
+  </div>
+</float-ui-content>
+
+
+<float-ui-content #content2>
+  <div style="width: 1000px;">
+    <div>
+      <button type="button" (click)="content2.hide()">
+        &times;
+      </button>
+    </div>
+    <div>
+      Content 2
     </div>
   </div>
 </float-ui-content>
