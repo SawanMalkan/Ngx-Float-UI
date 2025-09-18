@@ -1,9 +1,9 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { NgxFloatUiModule } from 'ngx-float-ui';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [NgxFloatUiModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
